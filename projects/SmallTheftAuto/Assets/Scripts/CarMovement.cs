@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -30,6 +31,7 @@ public class CarMovement : MonoBehaviour
         bil.AddRelativeForce(0,0,force);
 
         // Rotate around our y-axis
-        transform.Rotate(0, rotation, 0);
+        if(bil.velocity.z>0)
+         transform.Rotate(0, rotation, 0);
     }
 }
