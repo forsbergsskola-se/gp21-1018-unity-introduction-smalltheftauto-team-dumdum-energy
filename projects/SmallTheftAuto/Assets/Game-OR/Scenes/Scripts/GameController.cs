@@ -11,6 +11,10 @@ public class GameController : MonoBehaviour
         PlayerHealthOR healthPoints = new PlayerHealthOR(100);
         //displays message of how much hp character has
         Debug.Log($"Health: {healthPoints.GetHealth()}");
+        healthPoints.Damage(10);
+        Debug.Log($"Health: {healthPoints.GetHealth()}");
+        healthPoints.Heal(9);
+        Debug.Log($"Health: {healthPoints.GetHealth()}");
     }
 
     // Update is called once per frame

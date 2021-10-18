@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealthOR
+public class PlayerHealthOR : MonoBehaviour
 {
     private int health;
 
@@ -14,5 +14,15 @@ public class PlayerHealthOR
     public int GetHealth()
     {
         return health;
+    }
+
+    public void Damage(int damageTaken)
+    {
+        health -= damageTaken;
+    }
+
+    public void Heal(int healthGranted)
+    {
+        health += healthGranted;
     }
 }
