@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Camera player;
+    public Transform player;
+    public float delay;
+    public Vector3 offset;
     // Update is called once per frame
     void Update()
     {
-        player.transform.position = Vector3.Lerp(player.transform.position, transform.position, 1);
+        Vector3 dumDum = Vector3.Lerp(transform.position, player.position, delay);
+        transform.position = dumDum + offset;
     }
 }
