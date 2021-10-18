@@ -5,18 +5,13 @@ using UnityEngine;
         
 public class CameraControllerEK : MonoBehaviour
 {
-    public Transform target;
-
-    public float speed = 0.125f;
+    public Transform player;
+    public float delay;
     public Vector3 offset;
-
-    // Start is called before the first frame update
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, speed);
-        transform.position = smoothedPosition;
-
-        transform.LookAt(target);
+        Vector3 dumDum = Vector3.Lerp(transform.position, player.position, delay);
+        transform.position = dumDum + offset;
     }
 }
