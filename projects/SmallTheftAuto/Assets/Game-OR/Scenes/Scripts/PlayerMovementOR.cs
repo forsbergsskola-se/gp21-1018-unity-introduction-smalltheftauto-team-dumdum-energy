@@ -16,13 +16,30 @@ public class PlayerMovementOR : MonoBehaviour
         //only happens if press W
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0f, 0.01f, 0f);  
+            transform.Translate(0.01f, 0f, 0f);  
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(-0.01f, 0f, 0f);  
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(0);
+            transform.Rotate(0f, 0f, 0.2f);
         }
+        // First Exercise:
+        // make him walk backwards, when S is pressed
+        
+        // Second Exercise:
+        // make him turn left, if A is pressed
+        // transform.Rotate(xAngle, yAngle, zAngle);
+        // make him turn right, if D is pressed
+        
+        // Third Exercise:
+        // What problem exists again with Update, Movement, Frame-Rate (FPS)?
+        
+        // Fourth Exercise:
+        // Use Input.GetAxis() instead of Input.GetKey(
         
     }
 }
