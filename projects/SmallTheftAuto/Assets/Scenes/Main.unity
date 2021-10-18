@@ -169,7 +169,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 125588042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4ae075591bc0b44bbc3fcd8e195065, type: 3}
+  m_Script: {fileID: 11500000, guid: 897944079d25c4841bcc8593aa2f9171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
@@ -345,12 +345,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 705656988}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7e8260e89349ae4dbc8790a0aa1ac50, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cbf9d93493e9ef4d86d00c4e9d33f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 125588048}
-  cameraOffset: {x: 0, y: 0, z: 0}
-  speed: 2
+  player: {fileID: 125588048}
+  delay: 20
+  offset: {x: 0, y: 5, z: 0}
 --- !u!114 &705656993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,12 +360,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 705656988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81206576e5ee8c04e82d89f6da98c9f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 11c92b8342fbbf34a89192384be2d83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 125588048}
-  delay: 20
-  offset: {x: 0, y: 3, z: 0}
+  targetObject: {fileID: 125588048}
+  cameraOffset: {x: 0, y: 0, z: 0}
+  speed: 2
+  delay: 50
 --- !u!1 &904474085
 GameObject:
   m_ObjectHideFlags: 0

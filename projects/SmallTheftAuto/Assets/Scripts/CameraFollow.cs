@@ -8,7 +8,9 @@ public class CameraFollow : MonoBehaviour
 
     public Vector3 cameraOffset;
 
-    public float speed = 2.0f;
+    public float speed;
+
+    public float delay;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,8 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 newPosition = targetObject.transform.position + cameraOffset;
+        //Vector3 dumDum = Vector3.Lerp(transform.position, player.position, delay);
+        Vector3 newPosition = Vector3.Lerp(targetObject.transform.position, targetObject.transform.position, delay) ;
         transform.position = newPosition;
     }
 }
