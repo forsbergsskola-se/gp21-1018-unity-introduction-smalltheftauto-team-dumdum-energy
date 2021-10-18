@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Get the horizontal and vertical axis.
         // By default they are mapped to the arrow keys.
