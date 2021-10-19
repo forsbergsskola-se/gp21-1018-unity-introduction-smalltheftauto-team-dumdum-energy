@@ -4,41 +4,29 @@ using UnityEngine;
 
 public class PlayerMovementOR : MonoBehaviour
 {
+    
+    public float fast = 15f;
+    public float rotateFast = 120f;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    // Update is now fixed
+    void FixedUpdate()
     {
-        //only happens if press W
-        if (Input.GetKey(KeyCode.W))
-        {
-            transform.Translate(0.015f, 0f, 0f);  
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate(-0.015f, 0f, 0f);  
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(0f, -0.4f, 0f);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(0f, 0.4f, 0f);
-        }
         
+        // Grab horizontal and vertical axis, the mapping is by default.
+        float translation = Input.GetAxis("Vertical") * fast;
+        float rotation = Input.GetAxis("Horizontal") * rotateFast;
+        
+        translation *= Time.deltaTime;
+        rotation *= Time.deltaTime;
        
-        
-        // Third Exercise:
-        // What problem exists again with Update, Movement, Frame-Rate (FPS)?
-        
-        // Fourth Exercise:
-        // Use Input.GetAxis() instead of Input.GetKey(
-        
+        transform.Translate(0, 0, translation);
+
+        transform.Rotate(0, rotation, 0);
     }
+    
 }
