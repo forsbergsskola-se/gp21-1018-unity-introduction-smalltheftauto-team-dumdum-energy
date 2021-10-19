@@ -27,6 +27,10 @@ public class TransitionVehicle : MonoBehaviour
         if (distance < allowedEnterDistance)
         {
             GetInNOut();
+            if (player.activeSelf == false)
+            {
+                player.transform.position = car.transform.position + offSet;
+            }
         }
     }
 
@@ -44,7 +48,7 @@ public class TransitionVehicle : MonoBehaviour
             }
             car.SetActive(car.activeSelf);
             player.SetActive(!player.activeSelf);
-            player.transform.position = car.transform.position + offSet;
+            
         }
     }
 }
