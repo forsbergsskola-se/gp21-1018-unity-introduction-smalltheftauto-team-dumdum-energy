@@ -604,6 +604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 125588042}
   car: {fileID: 933167956}
+  movement: {fileID: 933167958}
+  offSet: {x: 0, y: 0, z: 1.5}
   enterExitKey: 101
 --- !u!1 &1785414123
 GameObject:
