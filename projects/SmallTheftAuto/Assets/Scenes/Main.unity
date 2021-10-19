@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 933167959}
   - component: {fileID: 933167958}
   - component: {fileID: 933167957}
+  - component: {fileID: 933167963}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -510,8 +511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3c37912b30538488af9e5b860370e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 150
-  rotationSpeed: 10
+  speed: 800
+  rotationSpeed: 30
 --- !u!65 &933167959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -589,6 +590,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933167963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933167956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ba40a9054735346b7e50218a493df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 125588042}
+  car: {fileID: 933167956}
+  enterExitKey: 101
 --- !u!1 &1785414123
 GameObject:
   m_ObjectHideFlags: 0
