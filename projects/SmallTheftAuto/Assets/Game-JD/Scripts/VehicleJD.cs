@@ -6,8 +6,6 @@ public class VehicleJD : MonoBehaviour
 {
     public GameObject player;
 
-    public CarMovementJD carMovement;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -41,12 +39,12 @@ public class VehicleJD : MonoBehaviour
     {
         player.transform.position = GetComponent<Transform>().position;
         player.SetActive(true);
-        carMovement.enabled = false;
+        GetComponent<CarMovementJD>().enabled = false;
     }
 
     void EnterCar()
     {
         player.SetActive(false);
-        carMovement.enabled = true;
+        GetComponent<CarMovementJD>().enabled = true;
     }
 }

@@ -181,7 +181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 264047683}
-  carMovement: {fileID: 193583255}
 --- !u!1 &264047683
 GameObject:
   m_ObjectHideFlags: 0
