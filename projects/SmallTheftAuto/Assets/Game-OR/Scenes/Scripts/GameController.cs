@@ -8,11 +8,11 @@ public class GameController : MonoBehaviour
     void Start()
     {
         //Creates new PlayerHealthOR and set 100hp as value for hp
-        PlayerHealthOR healthPoints = new PlayerHealthOR(100);
+       // HealthBarOR healthPoints = new HealthBarOR(100);
         //displays message of how much hp character has
-        Debug.Log($"Health: {healthPoints.GetHealth()}");
-        healthPoints.Damage(10);
-        Debug.Log($"Health: {healthPoints.GetHealth()}");
+      //  Debug.Log($"Health: {healthPoints.GetHealth()}");
+     //   healthPoints.Damage(10);
+       // Debug.Log($"Health: {healthPoints.GetHealth()}");
        // healthPoints.Heal(9);
        // Debug.Log($"Health: {healthPoints.GetHealth()}");
     }
