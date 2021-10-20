@@ -28,7 +28,7 @@ public class VeichleOR : MonoBehaviour
         }
     }
 
-    private bool IsPlayerNearCar()
+    bool IsPlayerNearCar()
     {
         return Vector3.Distance(this.playerOR.transform.position, this.transform.position) < 1;
     }
@@ -42,7 +42,7 @@ public class VeichleOR : MonoBehaviour
     private void EnterCar()
     {
         this.playerOR.SetActive(false);
-        this.carMovementOR.enabled = true;
+        GetComponent<CarMovementOR>().enabled = true;
     }
     
     private void LeaveCar()
