@@ -22,7 +22,7 @@ public class CarMovement : MonoBehaviour
         bil = GetComponent<Rigidbody>();
         float force = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-
+        float velocity = bil.velocity.magnitude;
         // Make it move 10 meters per second instead of 10 meters per frame...
         force *= Time.deltaTime;
         rotation *= Time.deltaTime;
@@ -31,7 +31,7 @@ public class CarMovement : MonoBehaviour
         bil.AddRelativeForce(0,0,force);
 
         // Rotate around our y-axis
-        if(bil.velocity.z!=0)
+        if(bil.velocity.x >0.1 | bil.velocity.z >0.1 | bil.velocity.x <-0.1 | bil.velocity.z <-0.1)
          transform.Rotate(0, rotation, 0);
     }
 }
