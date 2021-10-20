@@ -4,40 +4,39 @@ namespace ZooEK
 {
     class Program
     {
+        string[] AnimalZooz = new string[4];
         static void Main(string[] args)
         {
             Bear bear = new Bear();
-            Donkey donkey = new Donkey();
-            Lion lion = new Lion();
-            Clownfish clownfish = new Clownfish();
-            Salmon salmon = new Salmon();
-            Zoo<Mammal> animalZoo = new Zoo<Mammal>();
-            Zoo<Fish> fishZoo = new Zoo<Fish>();
+            Zoo<Bear> animalZoo = new Zoo<Bear>();
+
             Zoo<Donkey> donkeyZoo = new Zoo<Donkey>();
 
+            
 
-            animalZoo.AddObject = bear;
-            animalZoo.AddObject = donkey;
-            animalZoo.AddObject = lion;
+           /*
+            Zombie zombie = new Zombie();
+            Trap<Zombie> zombieTrap = new Trap<Zombie>();
+            zombieTrap.Activate(zombie);
+           */
 
-            donkeyZoo.AddObject = donkey;
 
-            fishZoo.AddObject = clownfish;
-            fishZoo.AddObject = salmon;
         }
     }
-
   
 }
 
 public class Zoo<T>
 {
-    public T AddObject { get; set; }
-
-    public T HasObject { get; set; }
+   public T AddObject { get; set; }
 }
+public class Animal
+{
+    public void AddAnimal(Donkey T)
+    {
 
-public class Animal { }
+    }
+}
 public class Mammal : Animal { }
 public class Bear : Mammal { }
 public class Donkey : Mammal { }
