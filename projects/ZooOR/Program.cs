@@ -4,15 +4,16 @@ namespace ZooOR
 {
     public class Zoo<Z>
     {
+        public void AddAnimal(Z Animal)
+            {
+    
+            }
         public Z AddType { get; set; }
     }
 
     public class Animal
     {
-        public void AddAnimal(Animal Z)
-        {
-
-        }
+        
     }
    
 

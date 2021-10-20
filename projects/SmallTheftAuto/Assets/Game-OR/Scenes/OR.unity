@@ -267,7 +267,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a920dfc1804850d49906c289fd42adad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 186557898}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.90588236, g: 0.08002928, b: 0.027450955, a: 1}
+    key1: {r: 0.9433962, g: 0.88017905, b: 0.030259816, a: 1}
+    key2: {r: 0.17140763, g: 0.9433962, b: 0.0391598, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 32768
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 908549720}
 --- !u!114 &186557898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,8 +1204,9 @@ GameObject:
   - component: {fileID: 1558109051}
   - component: {fileID: 1558109053}
   - component: {fileID: 1558109052}
+  - component: {fileID: 1558109054}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerOR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1254,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a920dfc1804850d49906c289fd42adad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 186557898}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 0}
 --- !u!114 &1558109053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,6 +1297,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dcbf525ab43db4297ffd844a071ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1558109054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558109049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2972d3f14fc87334f8cd1278bc4da7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 186557897}
 --- !u!1 &1745403479
 GameObject:
   m_ObjectHideFlags: 0
