@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementOR : MonoBehaviour
+public class CarMovementOR : MonoBehaviour
 {
     
     public float fast = 15f;
@@ -16,7 +16,7 @@ public class PlayerMovementOR : MonoBehaviour
     // Update is now fixed
     void FixedUpdate()
     {
-        
+       // transform.translate
         // Grab horizontal and vertical axis, the mapping is by default.
         float translation = Input.GetAxis("Vertical") * fast;
         float rotation = Input.GetAxis("Horizontal") * rotateFast;
