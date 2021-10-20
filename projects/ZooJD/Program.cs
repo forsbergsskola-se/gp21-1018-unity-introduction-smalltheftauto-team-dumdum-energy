@@ -4,104 +4,99 @@ using System.Runtime.CompilerServices;
 
 namespace ZooJD
 {
-    class Program
+    public class Program
     {
         static void Main()
         {
-            Test();
+            Zoo<Fish> fishZoo = new Zoo<Fish>();
+            fishZoo.AddAnimal(new Salmon());
+            fishZoo.AddAnimal(new Salmon());
+            Console.WriteLine("This should be False: " + fishZoo.HasAnimal<Clownfish>());
+
+            Zoo<Fish> fishZoo2 = new Zoo<Fish>();
+            fishZoo2.AddAnimal(new Salmon());
+            fishZoo2.AddAnimal(new Clownfish());
+            fishZoo2.AddAnimal(new Salmon());
+            Console.WriteLine("This should be True: " + fishZoo2.HasAnimal<Clownfish>());
+            
+            Zoo<Animal> animalZoo = new Zoo<Fish>();
+            animalZoo.AddAnimal(new Salmon());
+            animalZoo.AddAnimal(new Lion());
+            animalZoo.AddAnimal(new Donkey());
+            Console.WriteLine("This should be True: "+fishZoo.HasAnimal<Fish>());
         }
     }
+}
 
-    class Animal
+public class Animal
     {
         
     }
 
-    class Mammal : Animal
+    public class Mammal : Animal
     {
         
     }
 
-    class Bear : Mammal
+    public class Bear : Mammal
     {
         
     }
 
-    class Donkey : Mammal
+    public class Donkey : Mammal
     {
         
     }
 
-    class Lion : Mammal
+    public class Lion : Mammal
     {
         
     }
 
-    class Fish : Animal
+    public class Fish : Animal
     {
         
     }
 
-    class Salmon : Fish
+    public class Salmon : Fish
     {
         
     }
 
-    class Clownfish : Fish
+    public class Clownfish : Fish
     {
         
     }
 
-    class Student
+    public class Student
     {
         
     }
 
-    class Zoo<TAnimal> where TAnimal : Animal, new()
+    public class Zoo<TAnimal> where TAnimal : Animal, new()
     {
-        private TAnimal[] _animals;
-
-        public void BigArray()
+        public TAnimal[] _animals = Array.Empty<TAnimal>();
+        
+        public void AddAnimal(TAnimal animal)
         {
-            Array.Resize(ref _animals,_animals.Length + 1);
-        }
-        public TAnimal AddAnimal<TAnimal>(TAnimal animal) where TAnimal : Animal,new()
-        {
-            animal = new TAnimal();
-            return animal;
+                Array.Resize(ref _animals,_animals.Length+1);
+                _animals[^1] = animal;
+
         }
 
         public bool HasAnimal<TAnimal>()
         {
+            var test = typeof(TAnimal);
+            foreach (var VARIABLE in _animals)
+            {
+                //var position = VARIABLE.ToString().IndexOf('.')+1;
+                //var variable =VARIABLE.ToString().Substring(position);
+                if (Equals(VARIABLE, test))         //Needs to check both the class and parent-class type, how though?
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
-        public void Test()
-        {
-            Zoo<Animal> animalZoo2 = new Zoo<Animal>();
-            animalZoo2.AddAnimal(new Fish()); // OKAY
-            animalZoo2.AddAnimal(new Clownfish()); // OKAY
-            animalZoo2.AddAnimal(new Lion()); // OKAY
-            animalZoo2.AddAnimal(new Donkey()); // OKAY 
-            
-                Zoo<Fish> fishZoo = new Zoo<Fish>();
-                fishZoo.AddAnimal<Salmon>();
-                fishZoo.AddAnimal<Salmon>();
-                Console.WriteLine("This should be False: "+fishZoo.HasAnimal<Clownfish>());
-                
-                Zoo<Fish> fishZoo2 = new Zoo<Fish>();
-                fishZoo.AddAnimal<Salmon>();
-                fishZoo.AddAnimal<Clownfish>();
-                fishZoo.AddAnimal<Salmon>();
-                Console.WriteLine("This should be True: "+fishZoo2.HasAnimal<Clownfish>());
-                
-                Zoo<Animal> animalZoo = new Zoo<Fish>();
-                animalZoo.AddAnimal<Salmon>();
-                animalZoo.AddAnimal<Lion>();
-                animalZoo.AddAnimal<Donkey>();
-                Console.WriteLine("This should be True: "+fishZoo.HasAnimal<Fish>());
-            
-        }
-
     }
-}
