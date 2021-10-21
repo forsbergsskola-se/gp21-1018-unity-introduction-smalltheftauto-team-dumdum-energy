@@ -19,16 +19,16 @@ namespace ZooOR
 
         public bool HasAnimal<TSpecies>() where TSpecies : Animal
         {
-            var animal = typeof(TSpecies);
-            foreach (var variable in animals)
-            {
-                for (int i = 0; i < animals.Count; i++)
+            for (int i = 0; i < animals.Count; i++)
                 {
-                    Console.WriteLine(animals[i]);
-                    return true;
+                    if (animals[i] is TSpecies)
+                    {
+                        Console.WriteLine(animals[i]);
+                        return true;
+                    }
+                    
                 }
-            }
-            return false;
+                return false;
         }
         
     }
