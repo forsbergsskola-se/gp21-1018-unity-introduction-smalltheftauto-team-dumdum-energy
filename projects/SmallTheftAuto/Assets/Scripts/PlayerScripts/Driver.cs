@@ -18,14 +18,13 @@ public class Driver : MonoBehaviour
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
            var vehicle = FindObjectOfType<TransitionVehicle>(); //findObjectsOfType to find them all, then measure distance.
-           vehicle.Enter(_driver);
+           TransitionVehicle.Enter(driver);
         }
     }
 
     void Enter(Driver driver)
     {
-        private var _driver = driver;
-        _driver.enabled = false;
+        driver.enabled = false;
         var movement = vehicle.GetComponent<CarMovement>();
         movement.enabled = true;
 
