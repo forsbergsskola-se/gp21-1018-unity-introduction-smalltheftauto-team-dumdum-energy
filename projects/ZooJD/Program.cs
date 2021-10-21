@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Runtime.CompilerServices;
 
@@ -19,13 +21,14 @@ namespace ZooJD
             fishZoo2.AddAnimal(new Salmon());
             Console.WriteLine("This should be True: " + fishZoo2.HasAnimal<Clownfish>());
             
-            Zoo<Animal> animalZoo = new Zoo<Fish>();
+            Zoo<Animal> animalZoo = new Zoo<Animal>();
             animalZoo.AddAnimal(new Salmon());
             animalZoo.AddAnimal(new Lion());
             animalZoo.AddAnimal(new Donkey());
             Console.WriteLine("This should be True: "+fishZoo.HasAnimal<Fish>());
         }
-    }
+            
+        }
 }
 
 public class Animal
@@ -55,7 +58,6 @@ public class Animal
 
     public class Fish : Animal
     {
-        
     }
 
     public class Salmon : Fish
@@ -75,23 +77,18 @@ public class Animal
 
     public class Zoo<TAnimal> where TAnimal : Animal, new()
     {
-        public TAnimal[] _animals = Array.Empty<TAnimal>();
-        
+        List<TAnimal> _animals = new ();
+
         public void AddAnimal(TAnimal animal)
         {
-                Array.Resize(ref _animals,_animals.Length+1);
-                _animals[^1] = animal;
-
+               _animals.Add(animal);
         }
 
-        public bool HasAnimal<TAnimal>()
+        public bool HasAnimal<TSpecies>() where TSpecies : TAnimal
         {
-            var test = typeof(TAnimal);
-            foreach (var VARIABLE in _animals)
+            for (int i = 0; i < _animals.Count; i++)
             {
-                //var position = VARIABLE.ToString().IndexOf('.')+1;
-                //var variable =VARIABLE.ToString().Substring(position);
-                if (Equals(VARIABLE, test))         //Needs to check both the class and parent-class type, how though?
+                if (_animals[i] is TSpecies)
                 {
                     return true;
                 }
@@ -100,3 +97,11 @@ public class Animal
         }
 
     }
+//foreach (var VARIABLE in _animals)
+//{
+//    if (Equals(VARIABLE, test))         //Needs to check both the class and parent-class type, how though?
+//    {
+//        return true;
+//    }
+//}
+//return false;
