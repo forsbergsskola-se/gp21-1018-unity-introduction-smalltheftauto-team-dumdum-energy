@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,8 +9,9 @@ public class Player : MonoBehaviour
     public int currentHealth;
 
     public HealthBar healthBar;
+    [SerializeField] private TextMeshPro DeathMessage;
 
-    
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -36,8 +38,8 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-//     void IsPlayerDead()
-//     {
-//         public GameObject DeathMessage
-//     }
-// }
+    void IsPlayerDead()
+    {
+        DeathMessage = GetComponent<TextMeshPro>();
+    }
+}
