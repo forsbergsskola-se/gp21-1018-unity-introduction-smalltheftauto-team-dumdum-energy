@@ -36,8 +36,8 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    void IsPlayerDead()
-    {
-        
-    }
-}
+//     void IsPlayerDead()
+//     {
+//         public GameObject DeathMessage
+//     }
+// }
