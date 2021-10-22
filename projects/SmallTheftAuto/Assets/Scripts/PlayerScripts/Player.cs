@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -26,10 +28,10 @@ public class Player : MonoBehaviour
             TakeDamage(20);
         }
 
-        if (currentHealth == 0)
-        {
-            IsPlayerDead();
-        }
+        // if (currentHealth == 0)
+        // {
+        //     OnPlayerDeath();
+        // }
     }
 
     void TakeDamage(int damage)
@@ -38,8 +40,12 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    void IsPlayerDead()
-    {
-        DeathMessage = GetComponent<TextMeshPro>();
-    }
+    // public UnityEvent onPlayerDeath; 
+    // void OnDeath()
+    // {
+    //     onPlayerDeath.Invoke();
+    //     GameObject.Find(Convert.ToString(DeathMessage));
+    //     Destroy(GameObject.Find(Player));
+    // }
+    
 }
