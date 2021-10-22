@@ -27,17 +27,17 @@ namespace CarScripts
             return !player.activeInHierarchy;
         }
 
-        void LeaveCar()
+        public void LeaveCar()
         {
             player.transform.position = GetComponent<Transform>().position;
             player.SetActive(true);
-            GetComponent<CarMovementJD>().enabled = false;
+            GetComponent<CarMovement>().enabled = false;
         }
 
-        void EnterCar()
+        public void EnterCar()
         {
             player.SetActive(false);
-            GetComponent<CarMovementJD>().enabled = true;
+            GetComponent<CarMovement>().enabled = true;
         }
     }
 }

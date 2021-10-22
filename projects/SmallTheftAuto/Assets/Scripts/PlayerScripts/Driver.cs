@@ -20,21 +20,35 @@ public class Driver : MonoBehaviour
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
            var vehicles = FindObjectsOfType<Vehicle>(); //findObjectsOfType to find them all, then measure distance.
+            if(vehicles.Length == 0)
+            {
+                return;
+            }
            var vehicle = vehicles[0];
            float distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
-           if (driver != null)
+           
+            
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+                if(Vector3.Distance(this.transform.position, vehicles[i].transform.position) < distance)
+                {
+                    vehicle = vehicles[i];
+                    distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
+                }
+            }
+           /*if (driver != null)
            {
                Leave();
-           }
-           else if (distance < 10)
+           }*/
+           if (distance < 7)
            {
-               vehicle.Enter(this);
+               vehicle.EnterCar();
            }
         }
         
     }
 
-    void Enter(Vehicle vehicle)
+    /*void Enter(Vehicle vehicle)
     {
         driver = this;
         driver.enabled = false;
@@ -50,5 +64,5 @@ public class Driver : MonoBehaviour
         driver = null;
         var movement = vehicle.GetComponent<CarMovement>();
         movement.enabled = false;
-    } 
+    } */
 }
