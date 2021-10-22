@@ -5,47 +5,34 @@ namespace CarScripts
 {
     public class Vehicle : MonoBehaviour
     {
-        public GameObject player;
+        private Driver driver;
+
         private void Update()
         {
-            float distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
             if (Input.GetButtonDown("Interact-Vehicle"))
             {
-                if (!PlayerIsInCar())
-            {
-                if (IsPlayerNearCar())
+                if (driver != null)
                 {
-                    EnterCar();
+                    LeaveCar();
                 }
-                
-            }
-            else
-            {
-                LeaveCar();
             }
         }
-        }
-        bool PlayerIsInCar()
-        {
-            return !this.player.activeInHierarchy;
-        }
 
-
-        public void LeaveCar()
+        void LeaveCar()
         {
-            player.transform.position = GetComponent<Transform>().position;
-            player.SetActive(true);
+            driver.gameObject.transform.position = transform.position + new Vector3(0,0,2);
+            driver.gameObject.SetActive(true);
+            driver = null;
             GetComponent<CarMovement>().enabled = false;
         }
 
-        public void EnterCar()
+        // ReSharper disable Unity.PerformanceAnalysis
+        public void EnterCar(Driver driver)
         {
-            player.SetActive(false);
+            this.driver = driver;
+            GetComponent<Driver>();
+            driver.gameObject.SetActive(false);
             GetComponent<CarMovement>().enabled = true;
-        }
-        bool IsPlayerNearCar()
-        {
-            return Vector3.Distance(this.player.transform.position, this.transform.position) < 1;
         }
     }
 }
