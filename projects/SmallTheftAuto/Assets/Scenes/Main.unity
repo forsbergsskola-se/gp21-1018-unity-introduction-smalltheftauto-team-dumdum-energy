@@ -708,6 +708,10 @@ PrefabInstance:
       propertyPath: offSet.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7081041046971069246, guid: 83785b5c5f2aca44b82b5c1a90cb0c64, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8880547061583323873, guid: 83785b5c5f2aca44b82b5c1a90cb0c64, type: 3}
       propertyPath: speed
       value: 900
@@ -718,3 +722,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83785b5c5f2aca44b82b5c1a90cb0c64, type: 3}
+--- !u!1 &5794681150576206422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1503472053017020379, guid: 83785b5c5f2aca44b82b5c1a90cb0c64, type: 3}
+  m_PrefabInstance: {fileID: 5794681150576206421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5794681150576206423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794681150576206422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1e71d1a6b94790aae9f6ea49f9d630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 126287134068180816}

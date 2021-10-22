@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using CarScripts;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
+    private Driver driver;
     
     // Start is called before the first frame update
     void Start()
@@ -17,13 +19,24 @@ public class Driver : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
-           var vehicle = FindObjectOfType<TransitionVehicle>(); //findObjectsOfType to find them all, then measure distance.
-           TransitionVehicle.Enter(driver);
+           var vehicles = FindObjectsOfType<Vehicle>(); //findObjectsOfType to find them all, then measure distance.
+           var vehicle = vehicles[0];
+           float distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
+           if (driver != null)
+           {
+               Leave();
+           }
+           else if (distance < 10)
+           {
+               vehicle.Enter(this);
+           }
         }
+        
     }
 
-    void Enter(Driver driver)
+    void Enter(Vehicle vehicle)
     {
+        driver = this;
         driver.enabled = false;
         var movement = vehicle.GetComponent<CarMovement>();
         movement.enabled = true;
@@ -32,9 +45,10 @@ public class Driver : MonoBehaviour
 
     void Leave()
     {
-        Driver.transform.position = vehicle.transform.position;
-        Driver.enabled = true;
-        _driver = null;
-        vehicle.GetComponent<CarMovement>().enabled = false;
+        driver.transform.position = vehicle.transform.position;
+        driver.enabled = true;
+        driver = null;
+        var movement = vehicle.GetComponent<CarMovement>();
+        movement.enabled = false;
     } 
 }
