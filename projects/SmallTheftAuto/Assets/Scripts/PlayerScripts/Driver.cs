@@ -7,13 +7,6 @@ using UnityEngine;
 public class Driver : MonoBehaviour
 {
     private Driver driver;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -35,33 +28,17 @@ public class Driver : MonoBehaviour
                    distance = Vector3.Distance(transform.position, vehicle.transform.position);
                }
            }
-           /*if (driver != null)
+           if (driver != null)
            {
-               LeaveCar();
-           }*/
-           if (distance < 7)
+               vehicle.LeaveCar();
+               transform.position = vehicle.transform.position;
+           }
+           else if (distance < 7)
            {
                vehicle.EnterCar();
+               
            }
         }
         
     }
-
-    /*void Enter(Vehicle vehicle)
-    {
-        driver = this;
-        driver.enabled = false;
-        var movement = vehicle.GetComponent<CarMovement>();
-        movement.enabled = true;
-
-    }
-
-    void Leave()
-    {
-        driver.transform.position = vehicle.transform.position;
-        driver.enabled = true;
-        driver = null;
-        var movement = vehicle.GetComponent<CarMovement>();
-        movement.enabled = false;
-    } */
 }
