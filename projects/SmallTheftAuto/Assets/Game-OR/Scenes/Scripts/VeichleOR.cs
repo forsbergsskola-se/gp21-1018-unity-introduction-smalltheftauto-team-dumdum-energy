@@ -11,7 +11,7 @@ public class VeichleOR : MonoBehaviour
  
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetButtonDown("Interact-Vehicle"))
         {
             if (!PlayerIsInCar())
             {

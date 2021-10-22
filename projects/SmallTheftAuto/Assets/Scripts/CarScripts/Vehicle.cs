@@ -11,21 +11,25 @@ namespace CarScripts
             float distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
             if (Input.GetButtonDown("Interact-Vehicle"))
             {
-                if (IsInCar())
+                if (!PlayerIsInCar())
+            {
+                if (IsPlayerNearCar())
                 {
-                    LeaveCar();
+                    EnterCar();
                 }
-                else if(distance < 10)
-                {
-                    EnterCar(); 
-                }
-            
+                
+            }
+            else
+            {
+                LeaveCar();
             }
         }
-        bool IsInCar()
-        {
-            return !player.activeInHierarchy;
         }
+        bool PlayerIsInCar()
+        {
+            return !this.player.activeInHierarchy;
+        }
+
 
         public void LeaveCar()
         {
@@ -38,6 +42,10 @@ namespace CarScripts
         {
             player.SetActive(false);
             GetComponent<CarMovement>().enabled = true;
+        }
+        bool IsPlayerNearCar()
+        {
+            return Vector3.Distance(this.player.transform.position, this.transform.position) < 1;
         }
     }
 }
