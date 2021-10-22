@@ -17,8 +17,9 @@ public class Driver : MonoBehaviour
             {
                 return;
             }
-           var vehicle = vehicles[0];
-           float distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
+            var vehicle = vehicles[0];
+            float distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
+            
            
            foreach (var t in vehicles)
            {
@@ -28,14 +29,9 @@ public class Driver : MonoBehaviour
                    distance = Vector3.Distance(transform.position, vehicle.transform.position);
                }
            }
-           if (driver != null)
+           if (distance < 7)
            {
-               vehicle.LeaveCar();
-               transform.position = vehicle.transform.position;
-           }
-           else if (distance < 7)
-           {
-               vehicle.EnterCar();
+               vehicle.EnterCar(GetComponent<Driver>());
                
            }
         }
