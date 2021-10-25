@@ -19,13 +19,11 @@ public class Driver : MonoBehaviour
             }
             var vehicle = vehicles[0];
             float distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
-            
-           
-           foreach (var t in vehicles)
+            foreach (var v in vehicles)
            {
-               if(Vector3.Distance(transform.position, t.transform.position) < distance)
+               if(Vector3.Distance(transform.position, v.transform.position) < distance)
                {
-                   vehicle = t;
+                   vehicle = v;
                    distance = Vector3.Distance(transform.position, vehicle.transform.position);
                }
            }

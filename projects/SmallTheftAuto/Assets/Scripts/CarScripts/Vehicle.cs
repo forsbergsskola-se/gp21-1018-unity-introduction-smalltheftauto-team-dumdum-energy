@@ -17,7 +17,6 @@ namespace CarScripts
                 }
             }
         }
-
         void LeaveCar()
         {
             driver.gameObject.transform.position = transform.position + new Vector3(0,0,2);
@@ -25,8 +24,7 @@ namespace CarScripts
             driver = null;
             GetComponent<CarMovement>().enabled = false;
         }
-
-        // ReSharper disable Unity.PerformanceAnalysis
+        
         public void EnterCar(Driver driver)
         {
             this.driver = driver;
