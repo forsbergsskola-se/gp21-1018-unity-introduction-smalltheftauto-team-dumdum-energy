@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class QuestGiver : MonoBehaviour
 {
-    Player player = FindObjectOfType<Player>();
-    Canvas[] canvas = FindObjectsOfType<Canvas>();
+    
 
     private bool isOnQuest;
     private bool accepted;
+
+    Player player;
+    Canvas[] canvas;
     // Start is called before the first frame update
     void Start()
     {
-       
+        player = FindObjectOfType<Player>();
+        canvas = FindObjectsOfType<Canvas>();
     }
 
     // Update is called once per frame
