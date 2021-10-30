@@ -52,7 +52,7 @@ public class CarHealth : MonoBehaviour
         {
             Debug.Log("I exploded!");
             
-            Driver Dude = FindObjectOfType<Driver>(); //null, why?
+            Driver Dude = FindObjectOfType<Driver>(); //null, why? not active in hierarchy, how can i activate it tho?
             Dude.gameObject.SetActive(true);
             Dude.GetComponent<PlayerHealth>().Health = 0;
             Debug.Log(Dude.GetComponent<PlayerHealth>().Health);
