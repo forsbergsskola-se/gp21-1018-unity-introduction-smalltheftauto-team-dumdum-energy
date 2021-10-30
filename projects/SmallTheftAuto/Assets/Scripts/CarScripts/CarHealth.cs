@@ -51,13 +51,15 @@ public class CarHealth : MonoBehaviour
         if (_CarHealth <= 0 )
         {
             Debug.Log("I exploded!");
-            GetComponent<CarMovement>().enabled = false;
-            GetComponent<Vehicle>().enabled = false;
-            Driver Dude = FindObjectOfType<Driver>();
+            
+            Driver Dude = FindObjectOfType<Driver>(); //null, why?
             Dude.gameObject.SetActive(true);
             Dude.GetComponent<PlayerHealth>().Health = 0;
-            
             Debug.Log(Dude.GetComponent<PlayerHealth>().Health);
+            
+            GetComponent<CarMovement>().enabled = false;
+            GetComponent<Vehicle>().enabled = false;
+            
         }
     }
 }
