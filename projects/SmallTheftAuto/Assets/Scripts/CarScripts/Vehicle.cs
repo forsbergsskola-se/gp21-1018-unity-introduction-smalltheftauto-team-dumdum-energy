@@ -15,6 +15,11 @@ namespace CarScripts
                 {
                     LeaveCar();
                 }
+                if (GetComponent<CarHealth>().KillCar())
+                {
+                    GetComponent<PlayerHealth>().Health = 0;
+                    Debug.Log(GetComponent<PlayerHealth>().Health);
+                }
             }
         }
         void LeaveCar()
@@ -23,6 +28,8 @@ namespace CarScripts
             driver.gameObject.SetActive(true);
             driver = null;
             GetComponent<CarMovement>().enabled = false;
+            
+
         }
         
         public void EnterCar(Driver driver)

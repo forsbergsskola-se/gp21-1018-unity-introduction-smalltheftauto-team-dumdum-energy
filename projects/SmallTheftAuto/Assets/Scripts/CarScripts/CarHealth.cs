@@ -17,7 +17,7 @@ public class CarHealth : MonoBehaviour
         
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Exploded();
     }
@@ -51,15 +51,18 @@ public class CarHealth : MonoBehaviour
         if (_CarHealth <= 0 )
         {
             Debug.Log("I exploded!");
-            
-            Driver Dude = FindObjectOfType<Driver>(); //null, why? not active in hierarchy, how can i activate it tho?
-            Dude.gameObject.SetActive(true);
-            Dude.GetComponent<PlayerHealth>().Health = 0;
-            Debug.Log(Dude.GetComponent<PlayerHealth>().Health);
-            
             GetComponent<CarMovement>().enabled = false;
             GetComponent<Vehicle>().enabled = false;
             
         }
+    }
+
+    public bool KillCar()
+    {
+        if (_CarHealth <= 0)
+        {
+            return true;
+        }
+        return false;
     }
 }
