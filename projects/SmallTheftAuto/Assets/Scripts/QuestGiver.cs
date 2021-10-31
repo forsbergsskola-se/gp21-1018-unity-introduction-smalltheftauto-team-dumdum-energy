@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestGiver : MonoBehaviour
 {
     
 
-    private bool isOnQuest;
+    public bool isOnQuest;
     private bool accepted;
 
     Player player;
@@ -27,7 +28,7 @@ public class QuestGiver : MonoBehaviour
     void Quest()
     {
         var distance = Vector3.Distance(player.transform.position, transform.position);
-        if (distance < 2 && Input.GetButtonDown("Interact-Vehicle"))
+        if (distance < 5 && Input.GetButtonDown("Interact-Vehicle"))
         {
             if (isOnQuest)
             {
@@ -41,7 +42,7 @@ public class QuestGiver : MonoBehaviour
                     if (VARIABLE.name == "QuestCanvas")
                     {
                         GameObject canvas = VARIABLE.gameObject;
-                        canvas.SetActive(true);     
+                        canvas.GetComponent<Canvas>().enabled = true;
                     }
                 }
                 //open up a dialog where quest is presented, es and no button. yes = accepted
