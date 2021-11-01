@@ -15,4 +15,9 @@ public class PlayerMoney : MonoBehaviour
     {
         
     }
+
+    public void Give()
+    {
+        //give private money when completing quests etc.
+    }
 }

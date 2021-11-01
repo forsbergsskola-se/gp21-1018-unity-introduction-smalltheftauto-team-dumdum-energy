@@ -1,18 +1,42 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestCompleted : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private QuestGiver _questGiver;
+    private bool questStatus;
+    private bool requirement;
+
+    private void Start()
     {
-        
+         questStatus = FindObjectOfType<QuestGiver>().isOnQuest;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
+        if (questStatus)
+        {
+            if (CompleteQuest())
+            {
+                GivePlayerMoney();
+            }
+        }
+    }
+
+    private void GivePlayerMoney()
+    {
+        FindObjectOfType<Player>().GetComponent<PlayerMoney>().Give();
+    }
+
+    bool CompleteQuest()
+    {
+        if (requirement)
+        {
+            return true;
+        }
+        return false;
     }
 }
