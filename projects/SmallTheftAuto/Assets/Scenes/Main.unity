@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b820b9c5bce02e448b55895c2ff29775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnQuest: 0
 --- !u!65 &260518572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2064,6 +2065,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cdb0a7aa093e984ca497d9fd9e7460b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &126287134068180818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126287134068180816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798c093918941c6439b87a2ac3af5327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &126287134068180819
