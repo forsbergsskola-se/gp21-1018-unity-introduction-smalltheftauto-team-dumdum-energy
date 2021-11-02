@@ -7,7 +7,7 @@ using UnityEngine;
 public class CarHealth : MonoBehaviour
 {
     private float _CarMaxHealth = 300f;
-    private float _CarHealth;
+    public float _CarHealth;
     private float _crashDamage;
     // Start is called before the first frame update
     void Start()
