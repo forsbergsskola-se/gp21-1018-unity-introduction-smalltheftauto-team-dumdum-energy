@@ -569,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YOU DIED, DUMMY!
+  m_text: YOU LIFE BE WASTED!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1027,7 +1027,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4583faf45a3a48a4ab780e4d468f6aa8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1785,7 +1785,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0, g: 0.6937828, b: 0.7921569, a: 1}
+  m_Color: {r: 0.5849056, g: 0.17878246, b: 0.17878246, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2124,6 +2124,9 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 1219000560}
   DeathMessage: {fileID: 0}
+  OnPlayerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &759834922967260650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5538387906786036578, guid: cb211df1dd14dfc47ac6d551d85d2ae1, type: 3}
