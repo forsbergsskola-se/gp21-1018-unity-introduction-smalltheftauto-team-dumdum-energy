@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
      public void OnDeath()
      {
          OnPlayerDeath.Invoke();
-        //GameObject.Find(Convert.ToString(DeathMessage));
          Destroy(GameObject.Find("Player"));
      }
     
