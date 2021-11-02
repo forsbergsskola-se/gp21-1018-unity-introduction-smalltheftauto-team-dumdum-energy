@@ -29,10 +29,10 @@ public class Player : MonoBehaviour
             Score.scoreValue += 100;
         }
 
-        // if (currentHealth == 0)
-        // {
-        //     OnPlayerDeath();
-        // }
+        if (currentHealth == 0)
+        {
+             OnDeath();
+        }
     }
 
     void TakeDamage(int damage)
@@ -41,12 +41,12 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
-    // public UnityEvent onPlayerDeath; 
-    // void OnDeath()
-    // {
-    //     onPlayerDeath.Invoke();
-    //     GameObject.Find(Convert.ToString(DeathMessage));
-    //     Destroy(GameObject.Find(Player));
-    // }
+    public UnityEvent OnPlayerDeath; 
+     public void OnDeath()
+     {
+         OnPlayerDeath.Invoke();
+        GameObject.Find(Convert.ToString(DeathMessage));
+         Destroy(GameObject.Find("Player"));
+     }
     
 }
