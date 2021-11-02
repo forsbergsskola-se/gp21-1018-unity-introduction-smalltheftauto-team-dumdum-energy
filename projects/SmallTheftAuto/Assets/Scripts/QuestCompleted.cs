@@ -16,7 +16,9 @@ public class QuestCompleted : MonoBehaviour
 
     private void Update()
     {
-        
+        {
+            
+        }
         if (questStatus)
         {
             if (CompleteQuest())
@@ -39,4 +41,10 @@ public class QuestCompleted : MonoBehaviour
         }
         return false;
     }
+
+    void QuestRequirement()//here goes logic for the quest, kill people or arrive at a position maybe?
+    {
+        requirement = true;
+    }
 }
+
