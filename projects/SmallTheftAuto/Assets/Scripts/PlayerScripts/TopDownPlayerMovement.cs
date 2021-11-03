@@ -12,15 +12,18 @@ public class TopDownPlayerMovement : MonoBehaviour
     [SerializeField] private Camera camera;
     [SerializeField] private bool rotateTowardsMouse;
     
+    Animator m_Animator;
 
     private void Awake()
     {
         _input = GetComponent<InputHandler>();
+        m_Animator = gameObject.GetComponent<Animator>();
     }
     
     
     void Update()
     {
+        
         var targetVector = new Vector3(_input.InputVector.x, 0, _input.InputVector.y);
         
         // Move in aim direction
@@ -33,6 +36,18 @@ public class TopDownPlayerMovement : MonoBehaviour
         else
         {
             RotateTowardMouseVector();
+        }
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            m_Animator.ResetTrigger("Stand");
+            m_Animator.SetTrigger("Walk");
+        }
+
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D)  )
+        {
+
+            m_Animator.ResetTrigger("Walk");
+            m_Animator.SetTrigger("Stand");
         }
     }
 
