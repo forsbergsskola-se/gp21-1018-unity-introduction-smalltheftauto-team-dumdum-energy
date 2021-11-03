@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using CarScripts;
+using TMPro;
 using UnityEngine;
 
 public class CarHealth : MonoBehaviour
@@ -51,9 +52,11 @@ public class CarHealth : MonoBehaviour
         if (_CarHealth <= 0 )
         {
             Debug.Log("I exploded!");
+            FindObjectOfType<Canvas>().GetComponentInChildren<TextMeshPro>().enabled = true;
             GetComponent<CarMovement>().enabled = false;
             GetComponent<Vehicle>().enabled = false;
             
+
         }
     }
 
