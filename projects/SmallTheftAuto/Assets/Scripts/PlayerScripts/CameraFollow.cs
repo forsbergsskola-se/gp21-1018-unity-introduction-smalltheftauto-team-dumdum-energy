@@ -24,14 +24,14 @@ public class CameraFollow : MonoBehaviour
     {
         if (target.gameObject.activeInHierarchy)
         {
-            _camera.orthographicSize = 3f;
+            _camera.orthographicSize = 20f;
             Vector3 desiredPosition = target.position + offset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, speed);
             transform.position = smoothedPosition;   
         }
         else if (!target.gameObject.activeInHierarchy)
         {
-            _camera.orthographicSize = 8f;
+            _camera.orthographicSize = 40f;
             var car = FindObjectOfType<CarMovement>();
             Vector3 carDesired = car.transform.position + offset;
             Vector3 carSmooth = Vector3.Lerp(transform.position, carDesired, speed);
