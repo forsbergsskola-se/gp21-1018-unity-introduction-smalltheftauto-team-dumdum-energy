@@ -10,8 +10,6 @@ public class Driver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Interact-Vehicle"))
-        {
            var vehicles = FindObjectsOfType<Vehicle>(); //findObjectsOfType to find them all, then measure distance.
             if(vehicles.Length == 0)
             {
@@ -27,11 +25,5 @@ public class Driver : MonoBehaviour
                    distance = Vector3.Distance(transform.position, vehicle.transform.position);
                }
            }
-           if (distance < 7)
-           {
-               vehicle.EnterCar(GetComponent<Driver>());
-               
-           }
-        }
     }
 }
