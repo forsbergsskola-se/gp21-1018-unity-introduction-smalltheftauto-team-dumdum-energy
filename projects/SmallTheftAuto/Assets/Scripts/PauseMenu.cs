@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour
     public void SaveGame()
     {
         Debug.Log("Saving");
+        SaveSystem.SavePlayer(FindObjectOfType<Player>());
     }
 
     public void QuitGame()

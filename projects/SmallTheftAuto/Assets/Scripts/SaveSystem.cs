@@ -17,7 +17,7 @@ public static class SaveSystem
     }
 
 
-    public static PlayerData LoadPlayer()
+    public static PlayerData LoadPlayer(Player player)
     {
         string path = Application.persistentDataPath + "/player.save";
         if (File.Exists(path))
