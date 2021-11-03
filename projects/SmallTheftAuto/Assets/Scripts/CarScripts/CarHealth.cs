@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CarScripts;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CarHealth : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class CarHealth : MonoBehaviour
             }
         }
     }
-
+    public UnityEvent OnCarBoom;
     void Exploded()
     {
         if (_CarHealth <= 0 )
@@ -55,10 +56,12 @@ public class CarHealth : MonoBehaviour
             FindObjectOfType<Canvas>().GetComponentInChildren<TextMeshPro>().enabled = true;
             GetComponent<CarMovement>().enabled = false;
             GetComponent<Vehicle>().enabled = false;
+            OnCarBoom.Invoke();
             
 
         }
     }
+    
 
     public bool KillCar()
     {
