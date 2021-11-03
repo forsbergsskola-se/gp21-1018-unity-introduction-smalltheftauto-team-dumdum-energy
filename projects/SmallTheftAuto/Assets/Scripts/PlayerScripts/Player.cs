@@ -48,10 +48,10 @@ public class Player : MonoBehaviour
          Destroy(GameObject.Find("Player"));
      }
 
-     public void SavePlayer()
-     {
-         SaveSystem.SavePlayer(this);
-     }
+     // public void SavePlayer()
+     // {
+     //     SaveSystem.SavePlayer(this);
+     // }
 
      public void LoadPlayer()
      {
