@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
      public void LoadPlayer()
      {
-         PlayerData data = SaveSystem.LoadPlayer();
+         PlayerData data = SaveSystem.LoadPlayer(FindObjectOfType<Player>());
 
          currentHealth = data.health;
 
