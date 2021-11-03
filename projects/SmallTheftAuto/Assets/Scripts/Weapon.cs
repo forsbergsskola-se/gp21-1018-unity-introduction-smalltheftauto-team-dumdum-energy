@@ -1,47 +1,33 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private string name;
-    private int damage = 10;
-    private float fireRate = 0.25f;
-    private float range = 50f;
-    private Player player;
+    public Transform spawnPoint;
+    public GameObject bulletprefab;
 
-    private Ray ray;
-    private RaycastHit hit;
+    private float bulletForce = 20f;
 
     private void Start()
     {
-        name = "Hello";
-        player = FindObjectOfType<Player>();
-
-        ray.origin = player.transform.position;
-        ray.direction = player.transform.forward;
+        spawnPoint = GetComponentInChildren<Transform>().Find("FirePoint");
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (Physics.Raycast(ray, out hit))
-            {
-                Debug.DrawLine(ray.origin, hit.point, Color.red, 1.0f);
-            }
-            
+            Shoot();
         }
     }
 
-    void AttackPlayer()
+    void Shoot()
     {
-        FindObjectOfType<Player>().currentHealth -= damage;
-    }
-
-    void AttackCar()
-    {
-        FindObjectOfType<CarHealth>()._CarHealth -= damage;
+       GameObject bullet = Instantiate(bulletprefab, spawnPoint.position, spawnPoint.rotation);
+       Rigidbody rb = bullet.GetComponent<Rigidbody>();
+       rb.AddForce(spawnPoint.up*bulletForce, ForceMode.Impulse);
     }
 }
