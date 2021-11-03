@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-    private Driver driver;
+    //private Driver driver; //används aldrig så kommenterade ut den
     // Update is called once per frame
     void Update()
     {
