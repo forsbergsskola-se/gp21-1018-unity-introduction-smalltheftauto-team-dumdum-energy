@@ -28,6 +28,6 @@ public class Weapon : MonoBehaviour
     {
        GameObject bullet = Instantiate(bulletprefab, spawnPoint.position, spawnPoint.rotation);
        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-       rb.AddForce(spawnPoint.up*bulletForce, ForceMode.Impulse);
+       rb.AddForce(spawnPoint.forward*bulletForce, ForceMode.Impulse);
     }
 }
