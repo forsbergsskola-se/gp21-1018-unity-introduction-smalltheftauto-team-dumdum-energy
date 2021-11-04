@@ -42,12 +42,12 @@ public class QuestCompleted : MonoBehaviour
         return false;
     }
 
-    void QuestRequirement()//here goes logic for the quest, kill people or arrive at a position maybe?
+    private void OnTriggerEnter(Collider other)
     {
-        if (this.transform.position == new Vector3(63.56453f,0f,-6.910467f))
+        if (other.gameObject.CompareTag("Player"))
         {
             requirement = true;
-            Debug.Log("Good job!");
+            Debug.Log("Quest complete");
         }
     }
 }
