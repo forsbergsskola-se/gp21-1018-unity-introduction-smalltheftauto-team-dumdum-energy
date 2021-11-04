@@ -1,18 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestPointAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Animator _qpAnimator;
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OncollisionEnter(Collision collision)
     {
-        
+        _qpAnimator = gameObject.GetComponent<Animator>();
+        _qpAnimator.SetTrigger("QuestPointAnimation");
     }
 }

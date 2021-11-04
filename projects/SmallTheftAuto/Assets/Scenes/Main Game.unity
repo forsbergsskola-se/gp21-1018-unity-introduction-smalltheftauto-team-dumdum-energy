@@ -1951,7 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798c093918941c6439b87a2ac3af5327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requirement: 0
+  requirement: 1
 --- !u!54 &669734447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2791,7 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518f02a4d7df30643a53530d9ad92ff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 25
   rotateSpeed: 15
   camera: {fileID: 705656990}
   rotateTowardsMouse: 1
