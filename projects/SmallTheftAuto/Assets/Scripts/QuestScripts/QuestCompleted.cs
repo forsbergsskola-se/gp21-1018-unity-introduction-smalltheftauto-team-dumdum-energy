@@ -7,7 +7,7 @@ public class QuestCompleted : MonoBehaviour
 {
     private QuestGiver _questGiver;
     private bool questStatus;
-    private bool requirement;
+    public bool requirement;
 
     private void Start()
     {
@@ -16,9 +16,6 @@ public class QuestCompleted : MonoBehaviour
 
     private void Update()
     {
-        {
-            
-        }
         if (questStatus)
         {
             if (CompleteQuest())
