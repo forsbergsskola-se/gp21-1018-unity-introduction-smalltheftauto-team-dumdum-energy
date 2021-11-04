@@ -6,16 +6,30 @@ using UnityEngine;
 
 public class WeaponHolder : MonoBehaviour
 {
-    private List<Weapon> _weapons;
+    private Pistol _pistol;
+    private AutomaticWeapon _auto;
 
-    private Weapon activeWeapon;
 
+    private void Start()
+    {
+       _pistol = GetComponent<Pistol>();
+       _auto = GetComponent<AutomaticWeapon>();
+       _pistol.enabled = false;
+       _auto.enabled = false;
+    }
 
     private void Update()
     {
-        //if (buttonForHands)
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            //activeWeapon; //Hands
+            _pistol.enabled = true;
+            _auto.enabled = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _pistol.enabled = false;
+            _auto.enabled = true;
         }
     }
 }
