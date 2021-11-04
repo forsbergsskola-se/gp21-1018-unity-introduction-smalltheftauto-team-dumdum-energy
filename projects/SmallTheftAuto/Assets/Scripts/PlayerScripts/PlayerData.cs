@@ -10,7 +10,7 @@ public class PlayerData
 
    public PlayerData(Player player)
    {
-      health = player.currentHealth;
+      health = player.CurrentHealth;
       score = Score.scoreValue;
       position = new float[3];
       position[0] = player.transform.position.x;

@@ -8,7 +8,17 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
+    private int _currentHealth;
+
+    public int CurrentHealth
+    {
+        set
+        {
+            _currentHealth = value;
+            healthBar.SetHealth(value);
+        }
+        get => _currentHealth;
+    }
 
     public HealthBar healthBar;
     [SerializeField] private TextMeshPro DeathMessage;
@@ -16,7 +26,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
@@ -29,7 +39,7 @@ public class Player : MonoBehaviour
             Score.scoreValue += 100;
         }
 
-        if (currentHealth == 0)
+        if (CurrentHealth == 0)
         {
              OnDeath();
         }
@@ -37,8 +47,7 @@ public class Player : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        CurrentHealth -= damage;
     }
 
     public UnityEvent OnPlayerDeath; 
@@ -57,7 +66,8 @@ public class Player : MonoBehaviour
      {
          PlayerData data = SaveSystem.LoadPlayer(FindObjectOfType<Player>());
 
-         currentHealth = data.health;
+         CurrentHealth = data.health;
+         
 
          Vector3 position;
          position.x = data.position[0];

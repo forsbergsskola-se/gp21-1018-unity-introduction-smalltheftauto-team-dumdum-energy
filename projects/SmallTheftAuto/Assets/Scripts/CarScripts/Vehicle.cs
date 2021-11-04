@@ -20,8 +20,8 @@ namespace CarScripts
                 }
                 if (GetComponent<CarHealth>().KillCar())
                 {
-                    GetComponent<Player>().currentHealth = 0;
-                    Debug.Log(GetComponent<Player>().currentHealth);
+                    GetComponent<Player>().CurrentHealth = 0;
+                    Debug.Log(GetComponent<Player>().CurrentHealth);
                 }
             }
         }
