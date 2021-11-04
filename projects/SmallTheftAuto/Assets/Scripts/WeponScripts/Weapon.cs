@@ -8,8 +8,9 @@ public class Weapon : MonoBehaviour
 {
     public Transform spawnPoint;
     public GameObject bulletprefab;
+    public float Damage = 10;
 
-    private float bulletForce = 20f;
+    private float bulletForce = 200f;
 
     private void Start()
     {

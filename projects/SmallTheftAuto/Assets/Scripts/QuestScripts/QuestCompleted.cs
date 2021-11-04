@@ -44,7 +44,10 @@ public class QuestCompleted : MonoBehaviour
 
     void QuestRequirement()//here goes logic for the quest, kill people or arrive at a position maybe?
     {
-        requirement = true;
+        if (this.transform.position == new Vector3(63.56453,0,-6.910467))
+        {
+            requirement = true;
+        }
     }
 }
 
