@@ -23,6 +23,10 @@ public class QuestGiver : MonoBehaviour
     void Update()
     {
         Quest();
+        if (FindObjectOfType<QuestCompleted>().requirement)
+        {
+            isOnQuest = false;
+        }
     }
 
     void Quest()
