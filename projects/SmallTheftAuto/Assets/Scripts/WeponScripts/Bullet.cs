@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.collider.gameObject.CompareTag("Car"))
         { 
-            other.gameObject.GetComponent<CarHealth>()._CarHealth -= FindObjectOfType<Weapon>().Damage;
+            other.gameObject.GetComponent<CarHealth>()._CarHealth -= FindObjectOfType<AutomaticWeapon>().Damage;
             Debug.Log(other.gameObject.GetComponent<CarHealth>()._CarHealth);
         }
         Destroy(gameObject);

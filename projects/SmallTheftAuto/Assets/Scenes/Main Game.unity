@@ -1002,6 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798c093918941c6439b87a2ac3af5327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requirement: 0
 --- !u!1 &261892573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,7 +2610,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905552773}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15d7a8251b83b014a96724a82793a8a7, type: 3}
   m_Name: 
@@ -2617,6 +2618,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1271634820}
   bulletprefab: {fileID: 2963087487831373202, guid: 07c25b7a1693a094ea5db8ec2cf23bae, type: 3}
   Damage: 10
+  slot: 2
 --- !u!114 &905552778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,6 +2647,34 @@ MonoBehaviour:
   rotateSpeed: 15
   camera: {fileID: 705656990}
   rotateTowardsMouse: 1
+--- !u!114 &905552781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905552773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d559b5565baa48b48b985371e1dabacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &905552782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905552773}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c5d08e84f40c24aa637e930fe8c004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1271634820}
+  bulletprefab: {fileID: 2963087487831373202, guid: 07c25b7a1693a094ea5db8ec2cf23bae, type: 3}
+  Damage: 15
+  slot: 1
 --- !u!1 &933833495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,6 +3111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798c093918941c6439b87a2ac3af5327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requirement: 0
 --- !u!1001 &965585546
 PrefabInstance:
   m_ObjectHideFlags: 0
