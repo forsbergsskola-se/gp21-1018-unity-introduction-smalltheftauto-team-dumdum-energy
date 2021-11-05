@@ -22,27 +22,8 @@ public class PedestrianMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!turn)
-        {
-            float distCovered = (Time.time - startTime) * speed;
-            float fractDistance = distCovered / length;
-            transform.position = Vector3.Lerp(start.position, end.position, fractDistance);
-            if (transform.position == end.transform.position)
-            {
-                turn = true;
-            }
-        }
-
-        if (turn)
-        {
-            startTime = Time.time;
-            float distCovered = (Time.time - startTime) * speed;
-            float fractDistance = distCovered / length;
-            transform.position = Vector3.Lerp(end.position, start.position, fractDistance);
-            if (transform.position == start.transform.position)
-            {
-                turn = false;
-            }
-        }
+        float distCovered = (Time.time - startTime) * speed;
+        float fractDistance = distCovered / length;
+        transform.position = Vector3.Lerp(start.position, end.position, fractDistance);
     }
 }
