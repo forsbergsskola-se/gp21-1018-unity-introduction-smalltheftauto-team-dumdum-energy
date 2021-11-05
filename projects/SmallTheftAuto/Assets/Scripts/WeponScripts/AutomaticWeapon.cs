@@ -15,7 +15,7 @@ public class AutomaticWeapon : MonoBehaviour
     private float reloadTime = 3f;
     private bool isReloading = false;
     private int maxAmmo = 32;
-    private int currentAmmo;
+    public int currentAmmo;
     
 
     private void Start()
@@ -31,17 +31,22 @@ public class AutomaticWeapon : MonoBehaviour
         {
             return;
         }
-
+        shooting = false;
         if (currentAmmo <= 0)
         {
+            Debug.Log("Reloading Autmatic Weapon...");
             StartCoroutine(Reload());
             return;
         }
-        shooting = false;
-        if (Input.GetButton("Fire1"))
+        else
         {
-            shooting = true;
+            if (Input.GetButton("Fire1"))
+            {
+                shooting = true;
+            }
         }
+        
+        
     }
     
     void Shoot()

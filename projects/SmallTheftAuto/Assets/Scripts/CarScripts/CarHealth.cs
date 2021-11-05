@@ -37,26 +37,28 @@ public class CarHealth : MonoBehaviour
             else if (other.gameObject.CompareTag("Environment"))
             {
                 _CarHealth -= _crashDamage;
-                Debug.Log(_CarHealth);
+                Debug.Log("Car Health" + _CarHealth);
             }
 
-            if (_CarHealth< _CarMaxHealth*0.25)
+            if (_CarHealth < _CarMaxHealth*0.25)
             {
                 Debug.Log("Im on fire.");
                 //add GFX for the fire and activate here.
             }
         }
     }
-    public UnityEvent OnCarBoom;
+    //public UnityEvent OnCarBoom;
     void Exploded()
     {
         if (_CarHealth <= 0 )
         {
+            _CarHealth = 0;
             Debug.Log("I exploded!");
-            FindObjectOfType<Canvas>().GetComponentInChildren<TextMeshPro>().enabled = true;
+            //FindObjectOfType<Canvas>().GetComponentInChildren<TextMeshPro>().enabled = true;
             GetComponent<CarMovement>().enabled = false;
             GetComponent<Vehicle>().enabled = false;
-            OnCarBoom.Invoke();
+            //OnCarBoom.Invoke();
+            
             
 
         }

@@ -24,26 +24,47 @@ public class WeaponHolder : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (UsePistol())
         {
             _pistol.enabled = true;
             _auto.enabled = false;
             _knife.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (UseAutoWeapon())
         {
             _pistol.enabled = false;
             _knife.enabled = false;
             _auto.enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (UseKnife())
         {
             _pistol.enabled = false;
             _knife.enabled = true;
+<<<<<<< HEAD
             
             
+=======
+>>>>>>> ab87ec96050e9406f3b1b05f2303c430711b354d
             _auto.enabled = false;
+            FindObjectOfType<Knife>().gameObject.SetActive(true);
+
+
         }
+    }
+
+    private static bool UseKnife()
+    {
+        return Input.GetKeyDown(KeyCode.Alpha3);
+    }
+
+    private static bool UseAutoWeapon()
+    {
+        return Input.GetKeyDown(KeyCode.Alpha2);
+    }
+
+    private static bool UsePistol()
+    {
+        return Input.GetKeyDown(KeyCode.Alpha1);
     }
 }
