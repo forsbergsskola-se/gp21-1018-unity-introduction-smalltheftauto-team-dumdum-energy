@@ -7,22 +7,22 @@ using UnityEngine.UI;
 public class Money : MonoBehaviour
 {
 
-    public static int scoreValue = 0;
-    Text _score;
+    public static int moneyValue = 0;
+    Text _money;
 
    
 
     void Start()
     {
-        _score = GetComponent<Text>();
+        _money = GetComponent<Text>();
     }
 
     void Update()
     {
-        _score.text = "Score: " + scoreValue;
+        _money.text = "Money: " + moneyValue;
     }
-    public void SetScore(int score)
+    public void SetScore(int money)
     {
-        _score.text = "Score: " + score;
+        _money.text = "Money: " + money;
     }
 }

@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
-            Score.scoreValue += 100;
+            ScoreKeeper += 100;
         }
 
         if (CurrentHealth == 0)
