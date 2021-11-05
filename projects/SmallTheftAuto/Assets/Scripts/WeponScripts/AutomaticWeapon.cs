@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AutomaticWeapon : MonoBehaviour
 {
@@ -16,13 +17,21 @@ public class AutomaticWeapon : MonoBehaviour
     private bool isReloading = false;
     private int maxAmmo = 32;
     public int currentAmmo;
-    
+
+    public GameObject AutoRifleAmmoUi;
+
 
     private void Start()
     {
         currentAmmo = maxAmmo;
         spawnPoint = GetComponentInChildren<Transform>().Find("FirePoint");
         InvokeRepeating(nameof(Shoot), 0,1/fireRate);
+        AutoRifleAmmoUi.GetComponent<Text>().text = $"Rifle: {currentAmmo} / {maxAmmo}";
+    }
+
+    private void OnEnable()
+    {
+        AutoRifleAmmoUi.GetComponent<Text>().text = $"Rifle: {currentAmmo} / {maxAmmo}";
     }
 
     private void Update()
@@ -35,6 +44,7 @@ public class AutomaticWeapon : MonoBehaviour
         if (currentAmmo <= 0)
         {
             Debug.Log("Reloading Autmatic Weapon...");
+            AutoRifleAmmoUi.GetComponent<Text>().text = $"Rifle is Reloading...";
             StartCoroutine(Reload());
             return;
         }
@@ -59,6 +69,7 @@ public class AutomaticWeapon : MonoBehaviour
         GameObject bullet = Instantiate(bulletprefab, spawnPoint.position, spawnPoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(spawnPoint.forward*bulletForce, ForceMode.Impulse);
+        AutoRifleAmmoUi.GetComponent<Text>().text = $"Rifle: {currentAmmo} / {maxAmmo}";
     }
     
     IEnumerator Reload()
@@ -67,5 +78,6 @@ public class AutomaticWeapon : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
         currentAmmo = maxAmmo;
         isReloading = false;
+        AutoRifleAmmoUi.GetComponent<Text>().text = $"Rifle: {currentAmmo} / {maxAmmo}";
     }
 }
