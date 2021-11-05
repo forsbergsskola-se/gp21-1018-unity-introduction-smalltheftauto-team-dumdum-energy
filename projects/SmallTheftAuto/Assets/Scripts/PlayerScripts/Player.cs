@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private int _currentHealth;
     private int _currentScore;
     private int _currentMoney;
+    
 
     public int CurrentHealth
     {
