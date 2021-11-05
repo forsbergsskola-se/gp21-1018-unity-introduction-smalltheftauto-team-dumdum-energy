@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5960793905942439753}
   - component: {fileID: 8031050490703416044}
   - component: {fileID: -1030931985911609906}
+  - component: {fileID: 8842521121806051022}
   m_Layer: 0
   m_Name: Traffic
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,8 +97,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.038948298, y: 0.022533957, z: 0.07743364}
-  m_Center: {x: -0.00007988513, y: 0.0013563653, z: -0.00064020796}
+  m_Size: {x: 0.038948298, y: 0.17196289, z: 0.07743364}
+  m_Center: {x: -0.00007988592, y: 0.076070845, z: -0.0006402083}
 --- !u!54 &8031050490703416044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,6 +127,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acde3f32133c434a964915a5b903c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {fileID: 0}
-  end: {fileID: 0}
-  car: {fileID: 0}
+--- !u!114 &8842521121806051022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503472053017020379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1643e2595dbea74a85f5f70bfb53015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 150
+  power: 0
+  maxHealth: 150
