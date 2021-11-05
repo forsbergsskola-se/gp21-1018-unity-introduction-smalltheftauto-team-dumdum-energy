@@ -20,6 +20,11 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
+        if (FindObjectOfType<Player>() == null)
+        {
+            SceneManager.LoadScene("Main Game");
+        }
     }
 
     public void Resume()
