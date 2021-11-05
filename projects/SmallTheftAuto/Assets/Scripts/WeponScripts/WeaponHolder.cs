@@ -9,7 +9,7 @@ public class WeaponHolder : MonoBehaviour
     private Pistol _pistol;
     private AutomaticWeapon _auto;
     private Knife _knife;
-    public GameObject knife;
+    
 
 
     private void Start()
@@ -41,7 +41,7 @@ public class WeaponHolder : MonoBehaviour
         {
             _pistol.enabled = false;
             _knife.enabled = true;
-            FindObjectOfType<Knife>().gameObject.SetActive(true);
+            
             
             _auto.enabled = false;
         }

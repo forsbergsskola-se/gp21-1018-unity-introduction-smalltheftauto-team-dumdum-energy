@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
     private int _currentHealth;
+    private int _currentScore;
 
     public int CurrentHealth
     {
@@ -20,7 +21,18 @@ public class Player : MonoBehaviour
         get => _currentHealth;
     }
 
+    public int ScoreKeeper
+    {
+        set
+        {
+            _currentScore = value;
+            scoreValue.SetScore(value);
+        }
+        get => _currentScore;
+    }
+
     public HealthBar healthBar;
+    public Score scoreValue;
     [SerializeField] private TextMeshPro DeathMessage;
 
 
