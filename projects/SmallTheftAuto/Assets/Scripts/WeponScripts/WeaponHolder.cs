@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class WeaponHolder : MonoBehaviour
 {
@@ -35,7 +37,7 @@ public class WeaponHolder : MonoBehaviour
             pistol.gameObject.SetActive(true);
             Auto.gameObject.SetActive(false);
             knife.gameObject.SetActive(false);
-            
+                    
         }
 
         if (UseAutoWeapon())
