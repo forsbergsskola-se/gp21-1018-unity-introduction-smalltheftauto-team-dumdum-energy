@@ -9,6 +9,9 @@ public class WeaponHolder : MonoBehaviour
     private Pistol _pistol;
     private AutomaticWeapon _auto;
     private Knife _knife;
+    public GameObject knife;
+    public GameObject pistol;
+    public GameObject Auto;
     
 
 
@@ -29,25 +32,30 @@ public class WeaponHolder : MonoBehaviour
             _pistol.enabled = true;
             _auto.enabled = false;
             _knife.enabled = false;
+            pistol.gameObject.SetActive(true);
+            Auto.gameObject.SetActive(false);
+            knife.gameObject.SetActive(false);
+            
         }
 
         if (UseAutoWeapon())
         {
             _pistol.enabled = false;
-            _knife.enabled = false;
             _auto.enabled = true;
+            _knife.enabled = false;
+            pistol.gameObject.SetActive(false);
+            Auto.gameObject.SetActive(true);
+            knife.gameObject.SetActive(false);
+            
         }
         if (UseKnife())
         {
             _pistol.enabled = false;
-            _knife.enabled = true;
-<<<<<<< HEAD
-            
-            
-=======
->>>>>>> ab87ec96050e9406f3b1b05f2303c430711b354d
             _auto.enabled = false;
-            FindObjectOfType<Knife>().gameObject.SetActive(true);
+            _knife.enabled = true;
+            pistol.gameObject.SetActive(false);
+            Auto.gameObject.SetActive(false);
+            knife.gameObject.SetActive(true);
 
 
         }
