@@ -34,7 +34,7 @@ public class Knife : MonoBehaviour
         Debug.Log("I hit!" + col.name);
         if (col.tag == "Enemy")
         {
-            
+            col.GetComponent<IEnemy>().TakeDamage(10);
         }
     }
 }
