@@ -8,7 +8,7 @@ public class PedestrianMovement : MonoBehaviour
 {
     public Transform start;
     public Transform end;
-    private float speed = 3f;
+    private float speed = 0.5f;
     private float startTime;
     private float length;
     private bool turn = false;
@@ -24,6 +24,7 @@ public class PedestrianMovement : MonoBehaviour
     {
         float distCovered = (Time.time - startTime) * speed;
         float fractDistance = distCovered / length;
-        transform.position = Vector3.Lerp(start.position, end.position, fractDistance);
+        float time = Mathf.PingPong((Time.time * speed), 1);
+        transform.position = Vector3.Lerp(start.position, end.position, time);
     }
 }
