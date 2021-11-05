@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public Score scoreValue;
     [SerializeField] private TextMeshPro DeathMessage;
+    
 
 
     void Start()

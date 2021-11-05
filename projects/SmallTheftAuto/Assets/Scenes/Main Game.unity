@@ -2796,6 +2796,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1271634820}
   bulletprefab: {fileID: 2963087487831373202, guid: 07c25b7a1693a094ea5db8ec2cf23bae, type: 3}
   Damage: 10
+  currentAmmo: 0
 --- !u!114 &905552778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2836,7 +2837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d559b5565baa48b48b985371e1dabacb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knife: {fileID: 1421228473}
 --- !u!114 &905552782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2852,6 +2852,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1271634820}
   bulletprefab: {fileID: 2963087487831373202, guid: 07c25b7a1693a094ea5db8ec2cf23bae, type: 3}
   Damage: 15
+  currentAmmo: 0
 --- !u!114 &905552783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2864,6 +2865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5d2af0cf4f3714689b04e092f885b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knife: {fileID: 0}
 --- !u!1 &906744806
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,7 +3848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 297.5808, y: 186.4}
+  m_AnchoredPosition: {x: 17, y: 214}
   m_SizeDelta: {x: -595.1616, y: -360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1201437790
@@ -4388,6 +4390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5d2af0cf4f3714689b04e092f885b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knife: {fileID: 0}
 --- !u!1 &1429588023
 GameObject:
   m_ObjectHideFlags: 0
@@ -6536,6 +6539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 5941815260265713471, guid: 19214b7fe199f1b428a11a45cc435445, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19214b7fe199f1b428a11a45cc435445, type: 3}
 --- !u!1001 &4750911612852521785
@@ -6789,18 +6796,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _CarHealth: 0
-  OnCarBoom:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 518338800}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
