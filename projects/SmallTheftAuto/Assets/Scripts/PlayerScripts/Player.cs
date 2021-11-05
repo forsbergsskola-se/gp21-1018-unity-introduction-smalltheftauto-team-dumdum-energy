@@ -100,7 +100,14 @@ public class Player : MonoBehaviour
          {
              OnPlayerEnterSave.Invoke();
          }
+
+         if (other.tag == "Water")
+         {
+             OnDeath();
+         }
      }
+
+     
 
      public void LoadPlayer()
      {
