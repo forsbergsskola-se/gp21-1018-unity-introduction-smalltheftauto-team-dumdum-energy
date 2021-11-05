@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class PlayerMoney : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int playerMoney = 0;
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(playerMoney);
     }
 
-    public void Give()
+    public void Give(int amount)
     {
-        //give private money when completing quests etc.
+        playerMoney += amount;
     }
 }
