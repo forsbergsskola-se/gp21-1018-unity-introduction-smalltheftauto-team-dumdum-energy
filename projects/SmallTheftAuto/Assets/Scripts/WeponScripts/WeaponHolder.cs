@@ -41,11 +41,8 @@ public class WeaponHolder : MonoBehaviour
         {
             _pistol.enabled = false;
             _knife.enabled = true;
-<<<<<<< HEAD
-            
-            
-=======
->>>>>>> ab87ec96050e9406f3b1b05f2303c430711b354d
+
+
             _auto.enabled = false;
             FindObjectOfType<Knife>().gameObject.SetActive(true);
 
