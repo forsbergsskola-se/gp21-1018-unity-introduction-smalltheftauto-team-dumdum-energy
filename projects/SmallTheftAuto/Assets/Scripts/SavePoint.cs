@@ -7,6 +7,7 @@ using UnityEngine;
 public class SavePoint : MonoBehaviour
 {
     
+    
 
     // Update is called once per frame
     void Update()
@@ -15,6 +16,7 @@ public class SavePoint : MonoBehaviour
     }
    void OnTriggerEnter(Collider other)
     {
-          SaveSystem.SavePlayer(FindObjectOfType<Player>());  
+          SaveSystem.SavePlayer(FindObjectOfType<Player>());
+         
     }
 }

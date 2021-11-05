@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
         {
              OnDeath();
         }
+        
     }
 
     void TakeDamage(int damage)
@@ -75,11 +77,29 @@ public class Player : MonoBehaviour
         CurrentHealth -= damage;
     }
 
-    public UnityEvent OnPlayerDeath; 
+    public UnityEvent OnPlayerDeath;
+    public UnityEvent OnPlayerEnterSave;
+    public UnityEvent OnPlayerExitSave;
      public void OnDeath()
      {
          OnPlayerDeath.Invoke();
          Destroy(GameObject.Find("Player"));
+     }
+
+     private void OnTriggerExit(Collider other)
+     {
+         if (other.tag == "SavePoint")
+         {
+             OnPlayerExitSave.Invoke();
+         }
+     }
+
+     private void OnTriggerEnter(Collider other)
+     {
+         if (other.tag == "SavePoint")
+         {
+             OnPlayerEnterSave.Invoke();
+         }
      }
 
      public void LoadPlayer()
