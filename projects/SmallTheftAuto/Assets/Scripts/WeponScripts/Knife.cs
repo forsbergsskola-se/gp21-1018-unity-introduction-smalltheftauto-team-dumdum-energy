@@ -6,10 +6,12 @@ using UnityEngine;
 public class Knife : MonoBehaviour
 {
     private Animator _animator;
+    public GameObject knife;
     
     void Start()
     {
         _animator = GetComponent<Animator>();
+        GetComponentInChildren<Knife>().gameObject.SetActive(true);
     }
 
     

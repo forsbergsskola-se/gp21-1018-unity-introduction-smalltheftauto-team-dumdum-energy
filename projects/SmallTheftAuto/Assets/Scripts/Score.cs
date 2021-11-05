@@ -8,15 +8,21 @@ public class Score : MonoBehaviour
 {
 
     public static int scoreValue = 0;
-    Text score;
+    Text _score;
+
+   
 
     void Start()
     {
-        score = GetComponent<Text>();
+        _score = GetComponent<Text>();
     }
 
     void Update()
     {
-        score.text = "Score: " + scoreValue;
+        //_score.text = "Score: " + scoreValue;
+    }
+    public void SetScore(int score)
+    {
+        _score.text = "Score: " + score;
     }
 }
