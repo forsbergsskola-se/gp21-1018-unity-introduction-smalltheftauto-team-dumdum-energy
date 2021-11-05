@@ -47,7 +47,7 @@ public class CarHealth : MonoBehaviour
             }
         }
     }
-    public UnityEvent OnCarBoom;
+    //public UnityEvent OnCarBoom;
     void Exploded()
     {
         if (_CarHealth <= 0 )
@@ -57,7 +57,7 @@ public class CarHealth : MonoBehaviour
             //FindObjectOfType<Canvas>().GetComponentInChildren<TextMeshPro>().enabled = true;
             GetComponent<CarMovement>().enabled = false;
             GetComponent<Vehicle>().enabled = false;
-            OnCarBoom.Invoke();
+            //OnCarBoom.Invoke();
             
             
 

@@ -12,7 +12,7 @@ public class Pistol : MonoBehaviour
     public float Damage = 15;
 
     private int maxAmmo = 7;
-    private int currentAmmo;
+    public int currentAmmo;
     private float reloadTime = 1f;
     private float bulletForce = 200f;
     private bool isReloading = false;
@@ -31,12 +31,16 @@ public class Pistol : MonoBehaviour
         }
         if (currentAmmo <= 0)
         {
+            Debug.Log("Reloading Pistol...");
             StartCoroutine(Reload());
             return;
         }
-        if (Input.GetButtonDown("Fire1"))
+        else
         {
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
         }
     }
     

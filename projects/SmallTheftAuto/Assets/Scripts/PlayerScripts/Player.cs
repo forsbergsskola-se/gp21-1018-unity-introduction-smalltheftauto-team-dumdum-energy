@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     }
 
     public HealthBar healthBar;
-    [SerializeField] private TextMeshPro DeathMessage;
+    //[SerializeField] private TextMeshPro DeathMessage;
 
 
     void Start()
