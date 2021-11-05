@@ -17,7 +17,7 @@ public class Knife : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Ha-ha!");
+            Debug.Log("Knife Attack");
             Slash();
         }
         //Add on click for it to perform slash animation
