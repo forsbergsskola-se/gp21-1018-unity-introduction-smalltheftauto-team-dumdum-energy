@@ -14,7 +14,7 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        _score = GetComponent<Text>();
+        
     }
 
     void Update()
@@ -23,6 +23,7 @@ public class Score : MonoBehaviour
     }
     public void SetScore(int score)
     {
+        _score = GetComponent<Text>();
         _score.text = "Score: " + score;
     }
 }
