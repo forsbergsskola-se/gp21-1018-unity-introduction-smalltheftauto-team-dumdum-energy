@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
 
     void Update()
     {
-        //_score.text = "Score: " + scoreValue;
+        _score.text = "Score: " + scoreValue;
     }
     public void SetScore(int score)
     {
