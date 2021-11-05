@@ -8,17 +8,13 @@ public class TraficSpawner : MonoBehaviour
 {
     public Transform start;
     public Transform end;
-    private float speed = 0.5f;
-    private float startTime;
-    private float length;
-    private bool turn = false;
     public GameObject car;
 
     private void Start()
     {
         start = FindObjectOfType<TraficSpawner>().start;
         end = FindObjectOfType<TraficSpawner>().end;
-        InvokeRepeating("Spawn",5,1);
+        InvokeRepeating("Spawn",5,5f);
     }
 
     // Update is called once per frame

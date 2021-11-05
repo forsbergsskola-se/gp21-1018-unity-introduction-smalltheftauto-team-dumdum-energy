@@ -8,10 +8,9 @@ public class TrafficMovement : MonoBehaviour
 {
     private Transform start;
     private Transform end;
-    private float speed = 0.5f;
+    private float speed = 6.5f;
     private float startTime;
     private float length;
-    private bool turn = false;
 
     private void Start()
     {
