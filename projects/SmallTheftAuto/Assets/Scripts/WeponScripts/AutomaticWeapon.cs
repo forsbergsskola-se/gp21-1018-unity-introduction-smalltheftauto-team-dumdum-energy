@@ -14,7 +14,7 @@ public class AutomaticWeapon : MonoBehaviour
     private float bulletForce = 200f;
     private float reloadTime = 3f;
     private bool isReloading = false;
-    private int maxAmmo = 32;
+    public int maxAmmo = 32;
     private int currentAmmo;
     
 

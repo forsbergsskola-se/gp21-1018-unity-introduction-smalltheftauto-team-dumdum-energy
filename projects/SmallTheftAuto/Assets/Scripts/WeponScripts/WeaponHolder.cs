@@ -24,26 +24,27 @@ public class WeaponHolder : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             _pistol.enabled = true;
             _auto.enabled = false;
             _knife.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             _pistol.enabled = false;
             _knife.enabled = false;
             _auto.enabled = true;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             _pistol.enabled = false;
             _knife.enabled = true;
+            _auto.enabled = false;
             FindObjectOfType<Knife>().gameObject.SetActive(true);
             
-            _auto.enabled = false;
+            
         }
     }
 }
