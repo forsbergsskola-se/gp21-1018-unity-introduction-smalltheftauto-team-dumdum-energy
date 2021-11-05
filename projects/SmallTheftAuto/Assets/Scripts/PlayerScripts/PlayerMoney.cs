@@ -1,16 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMoney : MonoBehaviour
 {
-    private int playerMoney = 0;
+    public int playerMoney = 0;
+    private Text scoreTxt;
 
     // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(playerMoney);
-    }
+    
 
     public void Give(int amount)
     {
