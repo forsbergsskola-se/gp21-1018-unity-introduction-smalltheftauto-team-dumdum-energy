@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1143241051635525134}
   - component: {fileID: 5960793905942439753}
   - component: {fileID: 8031050490703416044}
+  - component: {fileID: 6398303190205441594}
   - component: {fileID: 8880547061583323873}
   m_Layer: 0
   m_Name: NewCar
@@ -114,6 +115,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &6398303190205441594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503472053017020379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1643e2595dbea74a85f5f70bfb53015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  power: 0
+  maxHealth: 200
 --- !u!114 &8880547061583323873
 MonoBehaviour:
   m_ObjectHideFlags: 0

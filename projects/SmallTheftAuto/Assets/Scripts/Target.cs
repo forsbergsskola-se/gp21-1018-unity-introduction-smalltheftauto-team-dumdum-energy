@@ -19,6 +19,8 @@ public class Target : MonoBehaviour, IEnemy
         if (currentHealth <= 0)
         {
             Die();
+            FindObjectOfType<Player>().ScoreKeeper += 500;
+            FindObjectOfType<Player>().MoneyKeeper += 500;
         }
     }
 

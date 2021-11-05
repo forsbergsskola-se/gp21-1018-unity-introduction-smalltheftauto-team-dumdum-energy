@@ -8,9 +8,13 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.gameObject.CompareTag("Car"))
-        { 
-            other.gameObject.GetComponent<CarHealth>()._CarHealth -= FindObjectOfType<AutomaticWeapon>().Damage;
-            Debug.Log("Car Health: " + other.gameObject.GetComponent<CarHealth>()._CarHealth);
+        {
+            other.gameObject.GetComponent<IEnemy>().TakeDamage(10);
+        }
+
+        if (other.collider.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<IEnemy>().TakeDamage(3);
         }
         Destroy(gameObject);
     }
