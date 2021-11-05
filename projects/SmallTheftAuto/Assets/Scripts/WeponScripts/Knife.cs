@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,5 +27,14 @@ public class Knife : MonoBehaviour
     public void Slash() 
     {
         _animator.SetTrigger("Attack");
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("I hit!" + col.name);
+        if (col.tag == "Enemy")
+        {
+            
+        }
     }
 }
