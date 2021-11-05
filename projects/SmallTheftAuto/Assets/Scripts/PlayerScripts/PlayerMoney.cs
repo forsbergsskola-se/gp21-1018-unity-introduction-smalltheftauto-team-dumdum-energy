@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerMoney : MonoBehaviour
 {
-    public int playerMoney = 0;
+    public int playerMoney;
     private Text scoreTxt;
 
     // Update is called once per frame

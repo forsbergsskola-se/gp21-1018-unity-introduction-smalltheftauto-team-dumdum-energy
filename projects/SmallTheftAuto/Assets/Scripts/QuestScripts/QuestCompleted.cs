@@ -27,7 +27,7 @@ public class QuestCompleted : MonoBehaviour
 
     private void GivePlayerMoney()
     {
-        FindObjectOfType<Player>().GetComponent<PlayerMoney>().Give(50);
+      FindObjectOfType<Player>().GetComponent<Player>().MoneyKeeper += 50;
     }
 
     bool CompleteQuest()
