@@ -2733,7 +2733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1505584058537412566, guid: 4ef6de0265127414da008c2d325f72d0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20.4
+      value: 20.400024
       objectReference: {fileID: 0}
     - target: {fileID: 1505584058537412566, guid: 4ef6de0265127414da008c2d325f72d0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6725,6 +6725,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1219000560}
+    - target: {fileID: 126287134068180822, guid: cb211df1dd14dfc47ac6d551d85d2ae1, type: 3}
+      propertyPath: scoreValue
+      value: 
+      objectReference: {fileID: 1201437790}
     - target: {fileID: 126287134068180822, guid: cb211df1dd14dfc47ac6d551d85d2ae1, type: 3}
       propertyPath: OnPlayerDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

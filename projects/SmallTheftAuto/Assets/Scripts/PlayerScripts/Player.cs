@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     private int _currentHealth;
     private int _currentScore;
+    private int _currentMoney;
 
     public int CurrentHealth
     {
@@ -30,9 +31,19 @@ public class Player : MonoBehaviour
         }
         get => _currentScore;
     }
+    public int MoneyKeeper
+    {
+        set
+        {
+            _currentMoney = value;
+            moneyValue.SetScore(value);
+        }
+        get => _currentMoney;
+    }
 
     public HealthBar healthBar;
     public Score scoreValue;
+    public Money moneyValue;
     [SerializeField] private TextMeshPro DeathMessage;
     
 
@@ -50,6 +61,7 @@ public class Player : MonoBehaviour
         {
             TakeDamage(20);
             ScoreKeeper += 100;
+            MoneyKeeper += 9000;
         }
 
         if (CurrentHealth == 0)
@@ -70,16 +82,13 @@ public class Player : MonoBehaviour
          Destroy(GameObject.Find("Player"));
      }
 
-     // public void SavePlayer()
-     // {
-     //     SaveSystem.SavePlayer(this);
-     // }
-
      public void LoadPlayer()
      {
          PlayerData data = SaveSystem.LoadPlayer(FindObjectOfType<Player>());
 
          CurrentHealth = data.health;
+         ScoreKeeper = data.score;
+         MoneyKeeper = data.money;
          
 
          Vector3 position;
