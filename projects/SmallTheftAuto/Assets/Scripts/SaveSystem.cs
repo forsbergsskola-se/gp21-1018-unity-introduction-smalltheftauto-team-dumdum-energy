@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using Unity.VisualScripting;
-
+/// <summary>
+/// I also watched Brackeys video on savesystem! :)
+/// </summary>
 public static class SaveSystem
 {
     

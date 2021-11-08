@@ -12,7 +12,7 @@ public class Money : MonoBehaviour
 
    
 
-    public void SetScore(int money)
+    public void SetScore(int money) //TODO: this should be called SetMoney?
     {
         _money = GetComponent<Text>();
         _money.text = "Money: " + money;

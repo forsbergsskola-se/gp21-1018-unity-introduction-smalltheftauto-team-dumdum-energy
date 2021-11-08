@@ -3,7 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/// <summary>
+/// In Update I would break it into 2 different methods
+/// * one for moving forward and back
+/// * one for turing
+/// </summary>
 public class CarMovement : MonoBehaviour
 {
     public float speed = 150.0f;
@@ -19,7 +23,7 @@ public class CarMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bil = GetComponent<Rigidbody>();
+        bil = GetComponent<Rigidbody>(); //TODO: I would put this in Awake or atleast start this only needs to be set once.
         float force = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         float velocity = bil.velocity.magnitude;

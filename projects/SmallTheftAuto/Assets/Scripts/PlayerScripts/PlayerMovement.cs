@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// I Would probably would probably create some more methods here
+/// just to make it abit more readable
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10.0f;
@@ -16,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) 
         {
             m_Animator.ResetTrigger("Stand");
             m_Animator.SetTrigger("Walk");

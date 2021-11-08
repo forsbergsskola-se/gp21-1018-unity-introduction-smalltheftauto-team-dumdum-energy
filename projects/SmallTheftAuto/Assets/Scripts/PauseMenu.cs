@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// Nice Script!
+/// </summary>
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
