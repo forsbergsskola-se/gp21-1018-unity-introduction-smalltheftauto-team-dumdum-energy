@@ -10,6 +10,7 @@ public class TraficSpawner : MonoBehaviour
     public Transform end;
     public GameObject car;
 
+    // TODO: Nice! :)
     private void Start()
     {
         start = FindObjectOfType<TraficSpawner>().start;

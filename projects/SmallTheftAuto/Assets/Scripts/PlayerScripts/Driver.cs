@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-    //private Driver driver; //används aldrig så kommenterade ut den
+    //private Driver driver; //anvï¿½nds aldrig sï¿½ kommenterade ut den
     // Update is called once per frame
     void Update()
     {
+        // TODO: I like that you used Unity's Input Manager
         if (Input.GetButtonDown("Interact-Vehicle"))
         {
             var vehicles = FindObjectsOfType<Vehicle>(); //findObjectsOfType to find them all, then measure distance.
@@ -18,6 +19,7 @@ public class Driver : MonoBehaviour
                 return;
             }
             var vehicle = vehicles[0];
+            // TODO: Good job!
             float distance = Vector3.Distance(this.transform.position, vehicle.transform.position);
             foreach (var v in vehicles)
             {

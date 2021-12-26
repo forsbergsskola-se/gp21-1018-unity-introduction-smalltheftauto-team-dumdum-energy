@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// TODO: Not sure, if this script is still used? Because the other scripts seem to also implement the logic for entering vehicles
 public class TransitionVehicle : MonoBehaviour
 {
     [SerializeField] private GameObject player = null;

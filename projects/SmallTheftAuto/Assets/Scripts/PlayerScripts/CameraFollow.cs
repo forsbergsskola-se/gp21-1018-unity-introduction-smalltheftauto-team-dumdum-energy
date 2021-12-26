@@ -29,6 +29,7 @@ public class CameraFollow : MonoBehaviour
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, speed);
             transform.position = smoothedPosition;   
         }
+        // TODO: This does not look too clean, also, just doing `} else {` would have been enough
         else if (!target.gameObject.activeInHierarchy)
         {
             _camera.orthographicSize = 40f;

@@ -27,6 +27,7 @@ public class CarMovement : MonoBehaviour
         force *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
+        // TODO: I like that you implemented physical movement here. Unfortunately, I cannot test this.
         // Move translation along the z-axis
         bil.AddRelativeForce(0,0,force);
 

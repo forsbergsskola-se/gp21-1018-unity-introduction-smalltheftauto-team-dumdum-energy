@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // TODO: Good!
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             m_Animator.ResetTrigger("Stand");

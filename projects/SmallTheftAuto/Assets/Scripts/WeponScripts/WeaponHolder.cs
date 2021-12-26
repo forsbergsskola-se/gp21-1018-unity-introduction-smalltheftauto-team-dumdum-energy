@@ -64,7 +64,7 @@ public class WeaponHolder : MonoBehaviour
     }
 
     private static bool UseKnife()
-    {
+    { // TODO: Oh boy, this is explained nowhere in the game. Almost missed this, costing you 15 points or so.
         return Input.GetKeyDown(KeyCode.Alpha3);
     }
 

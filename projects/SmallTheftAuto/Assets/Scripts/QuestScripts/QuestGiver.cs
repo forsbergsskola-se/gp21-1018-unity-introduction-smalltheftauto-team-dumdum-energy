@@ -29,6 +29,7 @@ public class QuestGiver : MonoBehaviour
         }
     }
 
+    // TODO: Name `StartQuest`, maybe?
     void Quest()
     {
         var distance = Vector3.Distance(player.transform.position, transform.position);
@@ -41,6 +42,7 @@ public class QuestGiver : MonoBehaviour
 
             if (!isOnQuest)
             {
+                // TODO: Fix variable name
                 foreach (var VARIABLE in canvas)
                 {
                     if (VARIABLE.name == "QuestCanvas")
