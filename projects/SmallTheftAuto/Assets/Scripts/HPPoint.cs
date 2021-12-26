@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HPPoint : MonoBehaviour
 {
+    // TODO: Good!
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

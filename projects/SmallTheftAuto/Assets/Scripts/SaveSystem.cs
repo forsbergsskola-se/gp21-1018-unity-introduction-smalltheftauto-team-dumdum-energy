@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 public static class SaveSystem
 {
-    
+    // Nice work in general. Not sure, why loading doesn't work correctly.
     public static void SavePlayer(Player player)
     {
         BinaryFormatter formatter = new BinaryFormatter();

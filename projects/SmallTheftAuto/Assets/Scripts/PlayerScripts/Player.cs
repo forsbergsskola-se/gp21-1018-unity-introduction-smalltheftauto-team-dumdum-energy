@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private int _currentScore;
     private int _currentMoney;
     
-
+    // TODO: Good!
     public int CurrentHealth
     {
         set

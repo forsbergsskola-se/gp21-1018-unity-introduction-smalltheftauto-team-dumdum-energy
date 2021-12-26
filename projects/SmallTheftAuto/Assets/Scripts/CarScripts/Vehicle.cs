@@ -11,7 +11,7 @@ namespace CarScripts
         {
             if (Input.GetButtonDown("Interact-Vehicle"))
             {
-               
+                // TODO: Try to phrase comments in english :)
                 //Driver.Cs update körs före Vehicle.cs Update När man är utanför bilen
                 //Debug.Log(GetComponent<Driver>());
                 if (driver != null)

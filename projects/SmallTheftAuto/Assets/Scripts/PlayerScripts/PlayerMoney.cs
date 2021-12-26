@@ -11,7 +11,7 @@ public class PlayerMoney : MonoBehaviour
 
     // Update is called once per frame
     
-
+    // TODO: Nice framework, lack of time, I guess?
     public void Give(int amount)
     {
         playerMoney += amount;
